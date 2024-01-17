@@ -2,23 +2,47 @@
 server:
   port: 8088
 
-  spring:
-    application:
-      name: CONFIG-SERVER
-    profiles:
-      active: native
-    cloud:
-      config:
-        server:
+spring:
+  application:
+    name: CONFIG-SERVER
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        bootstrap: true   # Add this line
+        git:
+          uri: https://github.com/sreejith-a-nair/BusVia-cloud-config-server
+          search-path: src/main/resources/config
+          default-label: master
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+      native:
+        search-location: "classpath:/config"
+
+
+
+#server:
+#  port: 8088
+#
+#  spring:
+#    application:
+#      name: CONFIG-SERVER
+#    profiles:
+#      active: native
+#    cloud:
+#      config:
+#        server:
 #          git:
-#            uri:
-#            search-path:
-#            default-label:
+#            uri: https://github.com/sreejith-a-nair/BusVia-cloud-config-server
+#            search-path: src/main/resources/config
+#            default-label: master
 #            timeout: 5
 #            clone-on-start: true
 #            force-pull: true
-          native:
-            search-location: "classpath:/config"
+#          native:
+#            search-location: "classpath:/config"
 
 
 
