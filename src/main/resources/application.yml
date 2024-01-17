@@ -1,0 +1,80 @@
+#new
+server:
+  port: 8088
+
+  spring:
+    application:
+      name: CONFIG-SERVER
+    profiles:
+      active: native
+    cloud:
+      config:
+        server:
+#          git:
+#            uri:
+#            search-path:
+#            default-label:
+#            timeout: 5
+#            clone-on-start: true
+#            force-pull: true
+          native:
+            search-location: "classpath:/config"
+
+
+
+
+
+
+
+
+
+
+#--previous ---
+#spring:
+#  application:
+#    name: CONFIG-SERVER
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/sreejith-a-nair/cloud-configuration-server
+#
+#server:
+#  port: 9092
+#
+#  application:
+#    name: CLOUD-CONFIG-SERVER
+#eureka:
+#   client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      default-zone: http://localhost:8761/eureka/
+
+#      old---end---
+#  instance:
+#    hostname: localhost
+
+
+
+#spring :
+#  application :
+#    name : CONFIG-SERVER
+#  cloud:
+#      config:
+#        server:
+#          git:
+#           uri : https://github.com/sreejith-a-nair/cloud-configuration-server
+#
+#
+#server :
+#  port: 9092
+#
+#eureka:
+#    client:
+#      register-with-eureka: true
+#      fetch-registry: true
+#      service-url:
+#        defaultZone: http://localhost:8761/eureka/
+#    instance:
+#        hostname: localhost
