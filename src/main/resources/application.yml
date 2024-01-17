@@ -10,7 +10,7 @@ spring:
   cloud:
     config:
       server:
-        bootstrap: true   # Add this line
+#        bootstrap: true   # Add this line
         git:
           uri: https://github.com/sreejith-a-nair/BusVia-cloud-config-server
           search-path: src/main/resources/config
