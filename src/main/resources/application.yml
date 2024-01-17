@@ -6,7 +6,7 @@ spring:
   application:
     name: CONFIG-SERVER
   profiles:
-    active: git
+    active: native
   cloud:
     config:
       server:
