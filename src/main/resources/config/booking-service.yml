@@ -1,9 +1,9 @@
 server:
-  port: 8082
+  port: 8085
 
 spring:
   application:
-    name: bus-service
+    name: booking-service
 #eureka:
 #  client:
 #    register-with-eureka: true

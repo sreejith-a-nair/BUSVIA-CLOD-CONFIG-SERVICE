@@ -1,4 +1,4 @@
-#new
+
 server:
   port: 8088
 
@@ -10,16 +10,69 @@ spring:
   cloud:
     config:
       server:
-#        bootstrap: true   # Add this line
-        git:
-          uri: https://github.com/sreejith-a-nair/BusVia-cloud-config-server
-          search-path: src/main/resources/config
-          default-label: master
-          timeout: 5
-          clone-on-start: true
-          force-pull: true
-      native:
-        search-location: "classpath:/config"
+        native:
+          search-locations: "classpath:/config"
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://54.169.219.205:8761/eureka}
+
+
+
+
+
+
+
+#server:
+#  port: 8088
+#
+#spring:
+#  application:
+#    name: CONFIG-SERVER
+#  profiles:
+#    active: native
+#  cloud:
+#    config:
+#      server:
+##        bootstrap: true   # Add this line
+#        git:
+##          uri: https://github.com/sreejith-a-nair/BusVia-cloud-config-server
+#          uri: https://github.com/sreejith-a-nair/cloud-configuration-server
+#          search-path: src/main/resources/config
+#          default-label: master
+#          timeout: 5
+#          clone-on-start: true
+#          force-pull: true
+#      native:
+#        search-location: "classpath:/config"
+#
+#eureka:
+#  instance:
+#    leaseRenewalIntervalInSeconds: 1
+#    leaseExpirationDurationInSeconds: 2
+#  client:
+#    serviceUrl:
+#      defaultZone: http://54.169.219.205:8761/eureka/
+#    healthcheck:
+#      enabled: true
+#    lease:
+#      duration: 5
+
+#
+#end
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -47,7 +100,9 @@ spring:
 
 
 
-
+#latest
+#          uri: https://github.com/sreejith-a-nair/BusVia-cloud-config-server
+#          uri: https://github.com/sreejith-a-nair/cloud-configuration-server
 
 
 
@@ -94,11 +149,6 @@ spring:
 #server :
 #  port: 9092
 #
-#eureka:
-#    client:
-#      register-with-eureka: true
-#      fetch-registry: true
-#      service-url:
-#        defaultZone: http://localhost:8761/eureka/
+
 #    instance:
 #        hostname: localhost
